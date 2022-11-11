@@ -77,7 +77,7 @@ def create_image():
             xyz = wave_intensity_to_xyz_color(intensity, L, wave)
             rgb = xyz_to_rgb(xyz)
             c = (int(255 * rgb[0]), int(255 * rgb[1]), int(255 * rgb[2]))
-            im.putpixel((i, j), c)
+            im.putpixel((i, size - j - 1), c)
 
     im.save("refraction_color_map.png")
 
