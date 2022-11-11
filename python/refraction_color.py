@@ -20,9 +20,9 @@ def xyz_to_rgb(xyz):
     if S == 0:
         return (0, 0, 0)
 
-    x0 = X / S
-    y0 = Y / S
-    z0 = Z / S
+    x0 = X / 220
+    y0 = Y / 220
+    z0 = Z / 220
 
     r = 3.2410 * x0 - 1.5374 * y0 - 0.4986 * z0
     g = -0.9692 * x0 + 1.8760 * y0 + 0.0416 * z0
@@ -34,9 +34,9 @@ def xyz_to_rgb(xyz):
         else:
             return 1.055 * pow(t, 1.0 / 2.4) - 0.055
 
-    r0 = fix(min(1, max(0, r * S / 220)))
-    g0 = fix(min(1, max(0, g * S / 220)))
-    b0 = fix(min(1, max(0, b * S / 220)))
+    r0 = fix(min(1, max(0, r)))
+    g0 = fix(min(1, max(0, g)))
+    b0 = fix(min(1, max(0, b)))
 
     return (r0, g0, b0)
 
