@@ -44,6 +44,7 @@ def xyz_to_rgb(xyz):
 def create_image():
     L = []
     wave = {}
+    # lin2012xyz10e_i_7sf.csv は http://cvrl.ioo.ucl.ac.uk/cmfs.htm の 10-deg 1mm でダウンロードする
     with open("./lin2012xyz10e_1_7sf.csv") as f:
         for line in f.readlines():
             w, x, y, z = line.strip().split(",")
