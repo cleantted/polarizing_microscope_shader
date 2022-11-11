@@ -65,11 +65,11 @@ def create_image():
     size = 1024
     im = Image.new("RGB", (size, size))
 
-    max_dn = 10
+    max_dn = 0.1
     standard_thin = 30 * 1000  # nm
     for i in range(size):
         for j in range(size):
-            dn = i / max_dn / size
+            dn = i * max_dn / size
             R = standard_thin * dn
             s_theta2 = j / size  # sin^2(2 * theta)
 
